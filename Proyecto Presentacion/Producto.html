@@ -1,0 +1,252 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>Pagina Venex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="Content/fontawesome-all.css" rel="stylesheet" />
+
+
+    <script src="Scripts/jquery-3.4.1.slim.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="JS/lista_tareas.js"></script>
+
+</head>
+
+<body class="bodyMio" ng-app="tareasApp" ng-controller="productosController">
+
+    <!--JUMBOTRON-->
+    <div class=" jumbotron jumbotron-fluid jumbotronMio">
+        <div class="container">
+            <h1 class="display-4 text-center"><i class="fab fa-connectdevelop"></i>Vensoft Web Page</h1>
+            <p class="text-center"> Nuestra primera pagina hecha totalmente para vos</p>
+        </div>
+    </div>
+
+    <!--NAVBAR-->
+    <div>
+        <ul class=" nav nav-tabs justify-content-center fixed-top" style="background-color:ghostwhite">
+            <li class="nav-item" ng-click="listadoProductos()">
+                <a class="nav-link " href="Producto.html"><i class="fas fa-box"></i>  Productos </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="AcercaDe.html"><i class="fas fa-hdd"></i> Acerca de nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="Contacto.html"><i class="far fa-comments"></i> Contactanos</a>
+            </li>
+            <li class="nav-item itemusuarioNav">
+                <a class="nav-link " href="Contacto.html"><i class="fas fa-user"></i>  Usuario</a>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <!--DIV PRINCIPAL-->
+    <div class=" container">
+
+        <!--MOSTRAR TABLA y PAGINACION-->
+        <div ng-show="mostrar=='tabla'">
+
+            <h3 class="text-center titulo MargenBajoyAlto"> Productos Guardados</h3>
+
+            <div>
+                <table class=" table table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Numero orden</th>
+                            <th class="text-center">Proveedor</th>
+                            <th class="text-center">Fecha de compra</th>
+                            <th class="text-center">¿En uso?</th>
+                            <th class="text-center">Precio</th>
+                            <th class="text-center">Estanteria</th>
+                            <th class="text-center text-nowrap"> Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="p in productos | orderBy: 'numeroOrden' ">
+
+                        <tr ng-class="{ 'MICLASE' : p.EnUso == true }">
+                            <td class="text-center" scope="row">{{p.id}}</td> <!--este nomnbre tiene que ser el MISMO que el que se trae de la base de datos-->
+                            <td class="text-center">{{p.nombre}}</td>
+                            <td class="text-center">{{p.numeroOrden}}</td>
+                            <td class="text-center">{{p.proveedor}}</td>
+                            <td class="text-center">{{p.fecha.substring(0,10)}}</td>
+                            <td class="text-center">{{p.enUso ? 'SI' : 'NO'}} </td>
+                            <td class="text-center">{{p.precio | currency }}</td>
+                            <td class="text-center">{{p.NombreEstanteria }}</td>
+                            <td class="text-center text-nowrap">
+                                <button ng-click="eliminar(p)" class="btn btn-danger "><i class="far fa-times-circle"></i></button>
+                                <button ng-click="editar(p)" id="botonEditar" class="btn btn-secondary"><i class="fas fa-pen-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <!--PAGINADOR-->
+                <div class="col-sm-12">
+                    <div class="row bg-light">
+                        <div class="col-sm-3">
+                            <span class="label label-default font-weight-bold">Registros: {{RegistrosTotal}}</span>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <ul uib-pagination total-items="RegistrosTotal" ng-model="PaginaActual"
+                                items-per-page="5"
+                                max-size="100" class="pagination-sm" boundary-links="true" first-text="«" 
+                                last-text="»" previous-text="<" next-text=">" 
+                                rotate="true" ng-change="cargarProductos()"></ul>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-primary" ng-click="impresion()"><span class="fa fa-print"></span> Imprimir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+                <button class="btn btn-primary Margenes" ng-click="cargarProductos()">
+                    <span class="fa fa-search"> </span> Filtrar
+                </button>
+                <button class="btn btn-info Margenes" ng-click="limpiarFiltro()">
+                    <i class="fas fa-eraser"></i> Limpiar filtro
+                </button>
+                <button class="btn btn-success Margenes" ng-click="nuevo()">
+                    <i class="fas fa-plus-circle"></i> Cargar nuevo
+                </button>
+            </div>
+
+            <form name="FormFiltro" class="container-fluid ">
+
+                <p class="text-center">FILTROS</p>
+                <div class="form-group row">
+
+                    <label class="col-form-label col-sm-2 col-sm-offset-1 ">
+                        Nombre:
+                    </label>
+                    <div class="col-sm-2 ">
+                        <input type="text" name="Nombre"
+                               class="form-control"
+                               ng-model="PFiltro.Nombre" />
+                    </div>
+                    <label class="col-form-label col-sm-2 col-sm-offset-1 ">
+                        Numero Orden:
+                    </label>
+                    <small ng-show="errorFiltroNumOrd" class="form-text text-danger">Error en campo</small>
+
+                    <div class="col-sm-2">
+                        <input type="text" name="Nombre"
+                               class="form-control"
+                               ng-model="PFiltro.NumeroOrden" />
+                    </div>
+                    <label class="col-form-label col-sm-2  text-left ">
+                        En Uso:
+                    </label>
+                    <div class="col-sm-2">
+                        <select class="form-control"
+                                ng-model="PFiltro.EnUso">
+                            <option value=''></option>
+                            <option value=true>SI</option>
+                            <option value=false>NO</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!--NUEVO/EDITAR  FORM-->
+        <form name="FormReg" ng-show="mostrar!='tabla'">
+            <!--<div class="form-group">
+                <label>id</label>
+                <input disabled type="text" ng-model="PSelec.Id" class="form-control" placeholder="Enter id">
+            </div>-->
+            <div class="form-group">
+                <label>Numero de Orden</label>
+                <input type="text" class="form-control" ng-model="PSelec.NumeroOrden" placeholder="Enter Numero Orden" maxlength="8">
+                <small ng-show="errorNumeroOrden" class="form-text text-danger">Campo Obligatorio</small>
+            </div>
+            <div class="form-group">
+                <label>Proveedor</label>
+                <select ng-model="PSelec.Proveedor">
+                    <option>Chamas</option>
+                    <option>Baldur</option>
+                    <option>Opcel</option>
+                    <option>Audi</option>
+                </select>
+                <small ng-show="errorProveedor" class="form-text text-danger">Campo Obligatorio</small>
+
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" ng-model="PSelec.Nombre" placeholder="Enter Nombre" maxlength="20">
+                <small ng-show="errorNombre" class="form-text text-danger">Campo Obligatorio</small>
+
+            </div>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" ng-model="PSelec.Fecha" placeholder=" Fecha de Compra">
+                <small ng-show="errorFecha" class="form-text text-danger">Campo Obligatorio</small>
+
+            </div>
+            <div class="form-group">
+                <label>Precio</label> 
+                <input type="text" class="form-control" ng-model="PSelec.Precio" placeholder="Enter Precio" maxlength="7">
+                <small ng-show="errorPrecio" class="form-text text-danger">Campo Obligatorio</small>
+
+            </div>
+            <div class="form-group">
+                <label>Estanteria </label>
+                <select class="form-control Espaciado col-9" ng-model="PSelec.IdEstanteria" ng-options="e.Id as e.Ubicacion for e in estanterias" id="idEstanteriaNuevo"></select>
+                <small ng-show="errorIdEstanteria" class="form-text text-danger">Campo Obligatorio</small>
+
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="PSelec.EnUso">
+                <label class="form-check-label ">En uso </label>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-success Margenes" ng-click="Grabar()"><i class="fas fa-plus-circle"></i>&nbsp; Cargar</button>
+                <button type="submit" class=" btn btn-primary Margenes" ng-click="volver()"> <i class="fas fa-undo-alt"></i>&nbsp; Volver </button>
+            </div>
+        </form>
+
+
+
+
+    </div>
+
+    <!--FOOTER-->
+    <footer class="text-center text-primary">
+        <hr class="my-4">
+        <p> <i class="fa fa-file-code-o"></i> Copyright 2019 -  Bellanich Nicolas - UTN FRC </p>
+        <br>
+    </footer>
+
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+
+    <!--<script src="Scripts/jquery-3.4.1.slim.js"></script>-->
+    <!-- <script src="Scripts/jquery-3.0.0.slim.js"></script>-->
+    <!--<script src="Scripts/jquery-3.0.0.slim.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="JS/lista_tareas.js"></script>
+    <script src="js/paginacionUIBootstrap.js"></script>-->
+
+
+</body>
+</html>

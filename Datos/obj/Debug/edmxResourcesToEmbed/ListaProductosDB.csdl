@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pav2productosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DBestanteria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="producto" Relationship="Self.FK_producto_estanteria1" FromRole="estanteria" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="DBproducto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="numero_ord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="proveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="enUso" Type="Boolean" />
+    <Property Name="idEstanteria" Type="Int32" />
+    <NavigationProperty Name="estanteria" Relationship="Self.FK_producto_estanteria1" FromRole="producto" ToRole="estanteria" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_producto_estanteria1">
+    <End Role="estanteria" Type="pav2productosModel.DBestanteria" Multiplicity="0..1" />
+    <End Role="producto" Type="pav2productosModel.DBproducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estanteria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="idEstanteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pav2productosEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DBestanteria" EntityType="pav2productosModel.DBestanteria" />
+    <EntitySet Name="DBproducto" EntityType="pav2productosModel.DBproducto" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_producto_estanteria1" Association="Self.FK_producto_estanteria1">
+      <End Role="estanteria" EntitySet="DBestanteria" />
+      <End Role="producto" EntitySet="DBproducto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,79 @@
+﻿.Espaciado{
+    margin:0.5%;
+}
+
+h2{
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+p{
+    margin-left:30px;
+    margin-top: 20px;
+    margin-bottom:15px;
+}
+
+
+
+li ul{
+
+    margin-left:30px;
+}
+
+.div1 {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    /*border: 1px solid blue;*/
+    width: 100px;
+    /*word-wrap: break-word;*/
+}
+
+ng-binding {
+    color: black;
+}
+
+.MICLASE{
+    background-color: palegreen;
+    color:dodgerblue;
+}
+
+.NORMAL{
+    background-color:transparent;
+}
+
+.jumbotronMio {
+    height: 200px;
+    background-image: url('../imagenes/wp2.jpg');
+}
+
+.bodyMio {
+    background-image: url('../imagenes/fondo-plomo.jpg');
+}
+
+.itemusuarioNav {
+    margin-left: 150px;
+}
+
+.titulo{
+    font-weight:400;
+}
+
+.Margenes{
+    margin: 1%;
+    margin-bottom: 3%
+    
+}
+
+.MargenBajoyAlto{
+    margin-bottom: 1%;
+    margin-top:2%;
+}
+

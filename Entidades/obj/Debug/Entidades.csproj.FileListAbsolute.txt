@@ -1,0 +1,36 @@
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.dll
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nico\Desktop\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.dll
+C:\Users\Nico\Desktop\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.dll
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.dll
+C:\Users\Nico\Desktop\24-6\Nueva carpeta\AAAA\PAV2 definitivo\Proyecto Presentacion\Entidades\obj\Debug\Entidades.pdb
